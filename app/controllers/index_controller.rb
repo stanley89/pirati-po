@@ -5,6 +5,6 @@ class IndexController < ActionController::Base
     else
       render :home, layout: 'application'
     end
-    
+
   end
 end

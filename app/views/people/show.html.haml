@@ -1,0 +1,56 @@
+%p#notice= notice
+%p
+  %strong Nick:
+  = @person.nick
+%p
+  %strong Degree:
+  = @person.degree
+%p
+  %strong Name:
+  = @person.name
+%p
+  %strong Surname:
+  = @person.surname
+%p
+  %strong Degree2:
+  = @person.degree2
+%p
+  %strong Street:
+  = @person.street
+%p
+  %strong Town:
+  = @person.town
+%p
+  %strong Zip:
+  = @person.zip
+%p
+  %strong Birth:
+  = @person.birth
+%p
+  %strong Email:
+  = @person.email
+%p
+  %strong Phone:
+  = @person.phone
+%p
+  %strong Jabber:
+  = @person.jabber
+%h2 Dovednosti
+%table
+  %tr
+    %th Název dovednosti
+    %th Schopnosti
+    %th Ochota
+    %th Poznámka
+  - @person.people_skills.each do |skill|
+    %tr
+      %td=skill.skill.name
+      %td=skill.level
+      %td=skill.favor
+      %td=skill.note
+      %td= link_to 'Odstranit', skill, :method => :delete, :data => { :confirm => 'Are you sure?' }
+- if @person.not_my_skills.count>0
+  = link_to 'Přidat dovednost', new_people_skill_path(:people_id => @person.id)
+= link_to 'Edit', edit_person_path(@person)
+|
+\#{link_to 'Back', people_path}

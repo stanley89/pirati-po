@@ -1,0 +1,24 @@
+= form_for @people_skill do |f|
+  - if @people_skill.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@people_skill.errors.count, "error")} prohibited this people_skill from being saved:"
+      %ul
+        - @people_skill.errors.full_messages.each do |msg|
+          %li= msg
+
+
+  .field
+    = f.label :skill_id
+    = f.collection_select(:skill_id, @people_skill.person.not_my_skills, :id, :name)
+  .field
+    = f.label :favor
+    = f.number_field :favor, :value => 1
+  .field
+    = f.label :level
+    = f.number_field :level, :value => 1
+  .field
+    = f.label :note
+    = f.text_field :note
+  = f.hidden_field :person_id
+  .actions
+    = f.submit 'Save'

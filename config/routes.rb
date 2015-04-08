@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :people_skills
+
   resources :skills
 
   resources :people

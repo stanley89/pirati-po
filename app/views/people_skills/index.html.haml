@@ -1,0 +1,29 @@
+%h1 Listing people_skills
+
+%table
+  %thead
+    %tr
+      %th People
+      %th Skill
+      %th Favor
+      %th Level
+      %th Note
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @people_skills.each do |people_skill|
+      %tr
+        %td= people_skill.people_id
+        %td= people_skill.skill_id
+        %td= people_skill.favor
+        %td= people_skill.level
+        %td= people_skill.note
+        %td= link_to 'Show', people_skill
+        %td= link_to 'Edit', edit_people_skill_path(people_skill)
+        %td= link_to 'Destroy', people_skill, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New People skill', new_people_skill_path

@@ -8,6 +8,6 @@ class Person < ActiveRecord::Base
   end
   
   def full_name
-    dergee+" "+name+" "surname+" "+degree2
+    dergee+" "+name+" "+surname+" "+degree2
   end
 end

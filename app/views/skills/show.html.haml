@@ -15,6 +15,9 @@
   - @skill.people_skills.each do |ps|
     %tr
       %td=ps.person.name
+      %td=ps.people_skill.level
+      %td=ps.people_Skill.favor
+      %td=ps.people_skill.note
 
 = link_to 'Edit', edit_skill_path(@skill)
 \|

@@ -6,4 +6,8 @@ class Person < ActiveRecord::Base
     my_skills_ids = skills.ids
     Skill.where.not(id:my_skills_ids)
   end
+  
+  def full_name
+    dergee+" "+name+" "surname+" "+degree2
+  end
 end

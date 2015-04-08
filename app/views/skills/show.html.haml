@@ -12,9 +12,9 @@
     %th úroveň
     %th ochota
     %th poznámka
-  - @skill.people.each do |person|
+  - @skill.people_skills.each do |ps|
     %tr
-      %td=person.name
+      %td=ps.person.name
 
 = link_to 'Edit', edit_skill_path(@skill)
 \|

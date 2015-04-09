@@ -52,6 +52,6 @@
       %td= link_to 'Odstranit', skill, :method => :delete, :data => { :confirm => 'Are you sure?' }
 - if @person.not_my_skills.count>0
   = link_to 'Přidat dovednost', new_people_skill_path(:people_id => @person.id)
-= link_to 'Edit', edit_person_path(@person)
+= link_to 'Edit osoby', edit_person_path(@person)
 |
 \#{link_to 'Seznam osob', people_path}

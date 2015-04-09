@@ -7,10 +7,11 @@
     = csrf_meta_tags
   %body
     - if user_signed_in?
-      = link_to 'Lidé', people_path
-      = link_to 'Dovednosti', skills_path
+      %div#main_menu
+        = link_to 'Lidé', people_path
+        = link_to 'Dovednosti', skills_path
 
-      = link_to(t('logout'), users_sign_out_path, :method => :delete)
+        = link_to(t('logout'), users_sign_out_path, :method => :delete)
     - else
       = link_to t("sign-in-mojeid"), user_omniauth_authorize_path(:open_id, :openid_url => "https://mojeid.cz/endpoint")
       = link_to t("sign-in-pirateid"), user_omniauth_authorize_path(:open_id, :openid_url => "https://openid.pirati.cz/")

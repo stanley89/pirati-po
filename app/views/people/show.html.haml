@@ -4,34 +4,34 @@
   %strong Nick:
   = @person.nick
 %p
-  %strong Degree:
+  %strong Titul:
   = @person.degree
 %p
-  %strong Name:
+  %strong Jméno:
   = @person.name
 %p
-  %strong Surname:
+  %strong Příjmení:
   = @person.surname
 %p
-  %strong Degree2:
+  %strong Titul za:
   = @person.degree2
 %p
-  %strong Street:
+  %strong Ulice a číslo:
   = @person.street
 %p
-  %strong Town:
+  %strong Město/obec:
   = @person.town
 %p
-  %strong Zip:
+  %strong PSČ (Zip):
   = @person.zip
 %p
-  %strong Birth:
+  %strong Narozen(a):
   = @person.birth
 %p
   %strong Email:
   = @person.email
 %p
-  %strong Phone:
+  %strong Telefon:
   = @person.phone
 %p
   %strong Jabber:
@@ -40,7 +40,7 @@
 %table
   %tr
     %th Název dovednosti
-    %th Schopnosti
+    %th Úroveň
     %th Ochota
     %th Poznámka
   - @person.people_skills.each do |skill|
@@ -54,4 +54,4 @@
   = link_to 'Přidat dovednost', new_people_skill_path(:people_id => @person.id)
 = link_to 'Edit', edit_person_path(@person)
 |
-\#{link_to 'Back', people_path}
+\#{link_to 'Seznam osob', people_path}

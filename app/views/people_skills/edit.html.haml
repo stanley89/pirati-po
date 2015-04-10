@@ -1,7 +1,7 @@
-%h2= @person.full_name
+%h2= @people_skill.person.full_name
 
 = render 'form'
 
 = link_to 'Show', @people_skill
 \|
-= link_to 'Zpět na osobu', @person
+= link_to 'Zpět na osobu' + @people_skill.person.full_name, @people_skill.person

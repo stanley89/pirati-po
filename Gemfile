@@ -42,7 +42,9 @@ gem 'haml-rails'
 group :development do
   gem 'rspec-rails'
 end
-
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
 
 gem 'devise'
 gem 'omniauth'

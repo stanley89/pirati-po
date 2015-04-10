@@ -2,6 +2,4 @@
 
 = render 'form'
 
-= link_to 'Show', @people_skill
-\|
-= link_to 'Zpět na osobu' + @people_skill.person.full_name, @people_skill.person
+= link_to 'Zpět na osobu ' + @people_skill.person.full_name, @people_skill.person

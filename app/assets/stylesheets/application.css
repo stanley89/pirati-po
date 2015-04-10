@@ -16,7 +16,7 @@
 
 table {border:#eff 1px solid;}
 table tr th {background:#ffa; padding:0 5px ;}
-table tr td {padding:0 5px ;}
+table tr td {padding:0 7px ;}
 div#main_menu {width:99%; background-color:#f0f8fc;margin:0 auto 8px; border-bottom:#eee 2px solid;}
-#main_menu a {padding:0 10px; font-weight:bold;}
+#main_menu a {padding:8px 16px; font-weight:bold;}
 #main_menu a:hover {color:#fff; background-color:#223;}

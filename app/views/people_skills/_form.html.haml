@@ -10,14 +10,16 @@
     .field
       = f.label :skill_id
       = f.collection_select(:skill_id, @people_skill.person.not_my_skills, :id, :name)
+  - else
+    %strong dovednost @skill.name
   .field
-    = f.label :favor
-    = f.number_field :favor, :value => 1
-  .field
-    = f.label :level
+    = f.label :level, "úroveň (začátečník, pokročilý, expert)"
     = f.number_field :level, :value => 1
   .field
-    = f.label :note
+    = f.label :favor, "čas (možnosti, ochota)"
+    = f.number_field :favor, :value => 1
+  .field
+    = f.label :note, "doplnění k dovednosti"
     = f.text_field :note
   = f.hidden_field :person_id
   .actions

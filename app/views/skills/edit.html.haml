@@ -1,7 +1,7 @@
-%h1 Editace dovednosti
+%h1= "Editace dovednosti " + @skill.name
 
 = render 'form'
 
-= link_to 'Show', @skill
+= link_to 'kdo umí ?' + @skill.name, @skill
 \|
 = link_to 'Seznam dovedností', skills_path

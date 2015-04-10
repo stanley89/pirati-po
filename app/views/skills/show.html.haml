@@ -1,11 +1,13 @@
 %p#notice= notice
 
 %h2
-  %b Jméno:
+  %b Dovednost:
   = @skill.name
 %p
-  %b Dotazníková:
-  = @skill.ask
+  - if @skill.ask
+    %b Dotazníková
+  - else 
+    není dotazníková
 %table
   %tr
     %th dovednost
@@ -27,6 +29,6 @@
       %td=ps.person.jabber
       %td=ps.person.town
 
-= link_to 'Editace', edit_skill_path(@skill)
+= link_to 'Upravit dovednost', edit_skill_path(@skill)
 \|
-= link_to 'zpět', skills_path
+= link_to 'Seznam dovedností', skills_path

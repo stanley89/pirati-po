@@ -10,9 +10,10 @@
     není dotazníková
 %table
   %tr
-    %th dovednost
+    %th dobrovolník
     %th úroveň
     %th čas
+    %th nastav
     %th doplnění
     %th telefon
     %th email
@@ -20,15 +21,16 @@
     %th město
   - @skill.people_skills.each do |ps|
     %tr
-      %td=ps.person.full_name
+      %td= link_to ps.person.full_name, ps.person
       %td=ps.level
       %td=ps.favor
+      %td= link_to 'o', edit_people_skill_path(skill)
       %td=ps.note
       %td=ps.person.phone
       %td=ps.person.email
       %td=ps.person.jabber
       %td=ps.person.town
 
-= link_to 'Upravit dovednost', edit_skill_path(@skill)
+= link_to 'Upravit atributy dovednosti', edit_skill_path(@skill)
 \|
 = link_to 'Seznam dovedností', skills_path

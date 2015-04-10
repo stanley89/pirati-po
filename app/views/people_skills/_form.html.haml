@@ -11,7 +11,7 @@
       = f.label :skill_id
       = f.collection_select(:skill_id, @people_skill.person.not_my_skills, :id, :name)
   - else
-    %h3= 'dovednost '+ @skill.name
+    %h3= 'dovednost '+ @people_skill.skill.name
   .field
     = f.label :level, "úroveň (začátečník, střední, expert)"
     = f.number_field :level, :value => 1

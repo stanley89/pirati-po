@@ -6,10 +6,10 @@
         - @people_skill.errors.full_messages.each do |msg|
           %li= msg
 
-
-  .field
-    = f.label :skill_id
-    = f.collection_select(:skill_id, @people_skill.person.not_my_skills, :id, :name)
+  if @people_skill.id.nil?
+    .field
+      = f.label :skill_id
+      = f.collection_select(:skill_id, @people_skill.person.not_my_skills, :id, :name)
   .field
     = f.label :favor
     = f.number_field :favor, :value => 1

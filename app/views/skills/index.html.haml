@@ -1,23 +1,23 @@
-%h1 Listing skills
+%h1 Seznam dovedností
 
 %table
   %thead
     %tr
-      %th Name
-      %th Ask
-      %th
-      %th
-      %th
+      %th Dovednost
+      %th dotazníková
+      %th Kdo umí?
+      %th upravit
+      %th smazat
       
   %tbody
     - @skills.each do |skill|
       %tr
         %td= skill.name
         %td= skill.ask
-        %td= link_to 'Show', skill
-        %td= link_to 'Edit', edit_skill_path(skill)
-        %td= link_to 'Destroy', skill, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'lidé', skill
+        %td= link_to 'upravit', edit_skill_path(skill)
+        %td= link_to 'x', skill, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Skill', new_skill_path
+= link_to 'Vytvořit novou dovednost', new_skill_path

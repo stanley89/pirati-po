@@ -8,10 +8,10 @@
   = @skill.ask
 %table
   %tr
-    %th Jméno
+    %th dovednost
     %th úroveň
-    %th ochota
-    %th poznámka
+    %th čas
+    %th doplnění
     %th telefon
     %th email
     %th jabber
@@ -27,6 +27,6 @@
       %td=ps.person.jabber
       %td=ps.person.town
 
-= link_to 'Edit', edit_skill_path(@skill)
+= link_to 'Editace', edit_skill_path(@skill)
 \|
 = link_to 'zpět', skills_path

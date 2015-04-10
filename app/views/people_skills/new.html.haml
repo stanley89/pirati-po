@@ -1,5 +1,6 @@
-%h1 New people_skill
+%h2= @people_skill.person.full_name
+%p%strong přidání dovednosti
 
 = render 'form'
 
-= link_to 'Back', people_skills_path
+= link_to 'Zpět na osobu ' + @people_skill.person.full_name, @people_skill.person

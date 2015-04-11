@@ -12,43 +12,43 @@
     %br/
     = f.text_field :nick
   .field
-    = f.label :degree
+    = f.label :degree, "titul před "
     %br/
     = f.text_field :degree
   .field
-    = f.label :name
+    = f.label :name, "Jméno "
     %br/
     = f.text_field :name
   .field
-    = f.label :surname
+    = f.label :surname, "Příjmení " 
     %br/
     = f.text_field :surname
   .field
-    = f.label :degree2
+    = f.label :degree2, "titul za "
     %br/
     = f.text_field :degree2
   .field
-    = f.label :street
+    = f.label :street, "Ulice a číslo "
     %br/
     = f.text_field :street
   .field
-    = f.label :town
+    = f.label :town, "Město/obec " 
     %br/
     = f.text_field :town
   .field
-    = f.label :zip
+    = f.label :zip, "PSČ "
     %br/
     = f.text_field :zip
   .field
-    = f.label :birth
+    = f.label :birth "Narození "
     %br/
     = f.date_select :birth, :start_year => 1920, :end_year => Time.now.year-17, :include_blank => true
   .field
-    = f.label :email
+    = f.label :email, "e-mail "
     %br/
     = f.text_field :email
   .field
-    = f.label :phone
+    = f.label :phone, "telefon "
     %br/
     = f.text_field :phone
   .field

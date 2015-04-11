@@ -46,8 +46,12 @@
   - @person.people_skills.each do |skill|
     %tr
       %td=skill.skill.name
-      %td=skill.level
-      %td=skill.favor
+      %td
+        - skill.level.times do |l|
+          %span.fa.fa-star
+      %td
+        - skill.favor.times do |f|
+          %span.fa.fa-heart
       %td=skill.note
       %td= link_to 'Změnit', edit_people_skill_path(skill)
       %td= link_to 'Odstranit', skill, :method => :delete, :data => { :confirm => 'Are you sure?' }

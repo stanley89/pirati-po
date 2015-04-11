@@ -15,7 +15,7 @@
         %td= link_to skill.name, skill
         %td
           - if skill.ask
-            %span.glyphicon.glyphicon-ok
+            %span.fa.fa-check
         %td= skill.people_skills.count
         %td= link_to 'upravit', edit_skill_path(skill)
         %td= link_to 'x', skill, :method => :delete, :data => { :confirm => 'Are you sure?' }

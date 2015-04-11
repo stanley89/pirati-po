@@ -2,6 +2,7 @@
 %table
   %thead
     %tr
+      %th osoba
       %th nick
       %th titul
       %th jméno
@@ -18,6 +19,7 @@
   %tbody
     - @people.each do |person|
       %tr
+        %td= link_to person.full_name, person
         %td= person.nick
         %td= person.degree
         %td= person.name

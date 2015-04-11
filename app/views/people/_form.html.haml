@@ -40,7 +40,7 @@
     %br/
     = f.text_field :zip
   .field
-    = f.label :birth "Narození "
+    = f.label :birth, "Narození "
     %br/
     = f.date_select :birth, :start_year => 1920, :end_year => Time.now.year-17, :include_blank => true
   .field

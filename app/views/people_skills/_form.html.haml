@@ -14,10 +14,10 @@
     %h3= 'dovednost '+ @people_skill.skill.name
   .field
     = f.label :level, "úroveň (začátečník, střední, expert)"
-    = f.number_field :level, :value => 1
+    = f.number_field :level
   .field
     = f.label :favor, "čas (možnosti, ochota)"
-    = f.number_field :favor, :value => 1
+    = f.number_field :favor
   .field
     = f.label :note, "doplnění k dovednosti"
     = f.text_field :note

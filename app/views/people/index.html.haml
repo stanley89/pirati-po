@@ -4,27 +4,19 @@
     %tr
       %th osoba
       %th nick
-      %th titul
-      %th jméno
-      %th příjmení
-      %th titul
-      %th ulice
+      %th ulice č.
       %th město/obec
       %th PSČ
       %th narození
       %th e-mail
       %th telefon
       %th jabber
-      %th{:colspan => "3"}
+      %th{:colspan => "2"}
   %tbody
     - @people.each do |person|
       %tr
         %td= link_to person.full_name, person
         %td= person.nick
-        %td= person.degree
-        %td= person.name
-        %td= person.surname
-        %td= person.degree2
         %td= person.street
         %td= person.town
         %td= person.zip
@@ -32,8 +24,7 @@
         %td= person.email
         %td= person.phone
         %td= person.jabber
-        %td= link_to 'Show', person
         %td= link_to 'Edit', edit_person_path(person)
-        %td= link_to 'Smazat', person, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'x', person, method: :delete, data: { confirm: 'opravdu smazat '+person.full_name+'?' }
 %br/
 = link_to 'přidat novou osobu', new_person_path

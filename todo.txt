@@ -3,3 +3,7 @@ výchozí hodnoty v ps.edit se nenačtou
 
 
 stránkování
+filtry
+
+
+Hover na ikonkách, které jsou odkazem.

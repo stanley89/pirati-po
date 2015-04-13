@@ -25,6 +25,6 @@
         %td= person.phone
         %td= person.jabber
         %td= link_to 'Edit', edit_person_path(person)
-        %td= link_to 'x', person, method: :delete, data: { confirm: 'opravdu smazat '+person.full_name+'?' }
+        %td= link_to 'x', person, method: :delete, data: { confirm: 'Opravdu smazat osobu jménem '+person.full_name+'?' }
 %br/
 = link_to 'přidat novou osobu', new_person_path

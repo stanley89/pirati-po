@@ -41,11 +41,11 @@
   %tr
     %th Název dovednosti
     %th Úroveň
-    %th Ochota
+    %th Čas/ochota
     %th Poznámka
   - @person.people_skills.each do |skill|
     %tr
-      %td=skill.skill.name
+      %td= link_to skill.skill.name, skill
       %td
         - skill.level.times do |l|
           %span.fa.fa-star

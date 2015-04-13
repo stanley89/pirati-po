@@ -1,9 +1,8 @@
-form action na ps.edit
-výchozí hodnoty v ps.edit se nenačtou
-
 
 stránkování
 filtry
 
+a dovednost v person by se mohla proklikávat na skill
+u skil show chybějí hvězdičky ještě
 
 Hover na ikonkách, které jsou odkazem.

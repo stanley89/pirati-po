@@ -1,0 +1,5 @@
+form action na ps.edit
+výchozí hodnoty v ps.edit se nenačtou
+
+
+stránkování

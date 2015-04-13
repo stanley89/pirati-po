@@ -12,7 +12,7 @@
   %tr
     %th dobrovolník
     %th úroveň
-    %th čas
+    %th čas/ochota
     %th nastav
     %th doplnění
     %th telefon
@@ -22,7 +22,10 @@
   - @skill.people_skills.each do |ps|
     %tr
       %td= link_to ps.person.full_name, ps.person
-      %td=ps.level
+      %td=
+        - ps.level.times do |l|
+          %span.fa.fa-star
+
       %td=ps.favor
       %td= link_to 'o', edit_people_skill_path(ps)
       %td=ps.note

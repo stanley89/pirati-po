@@ -19,6 +19,8 @@ class PeopleSkillsController < ApplicationController
   end
 
   def edit
+    @people_skill.level ||= 1
+    @people_skill.favor ||= 1
   end
 
   def create
@@ -30,7 +32,7 @@ class PeopleSkillsController < ApplicationController
 
   def update
     @people_skill.update(people_skill_params)
-    respond_with(@people_skill)
+    redirect_to @people_skill.person
   end
 
   def destroy

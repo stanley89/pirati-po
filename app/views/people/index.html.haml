@@ -3,6 +3,7 @@
   %thead
     %tr
       %th osoba
+      %th #
       %th nick
       %th ulice č.
       %th město/obec
@@ -11,12 +12,12 @@
       %th e-mail
       %th telefon
       %th jabber
-      %th \#
       %th{:colspan => "2"}
   %tbody
     - @people.each do |person|
       %tr
         %td= link_to person.full_name, person
+        %td= person.people_skills.count
         %td= person.nick
         %td= person.street
         %td= person.town
@@ -25,8 +26,8 @@
         %td= person.email
         %td= person.phone
         %td= person.jabber
-        %td= person.people_skills.count
         %td= link_to 'Edit', edit_person_path(person)
         %td= link_to 'x', person, method: :delete, data: { confirm: 'Opravdu smazat osobu jménem '+person.full_name+'?' }
 %br/
-= link_to 'přidat novou osobu', new_person_path
+%div.dal
+  = link_to 'přidat novou osobu', new_person_path

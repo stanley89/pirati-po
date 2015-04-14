@@ -25,8 +25,9 @@
       %td
         - ps.level.times do |l|
           %span.fa.fa-star
-
-      %td=ps.favor
+      %td
+        - ps.favor.times do |f|
+          %span.fa.fa-heart
       %td= link_to 'o', edit_people_skill_path(ps)
       %td=ps.note
       %td=ps.person.phone

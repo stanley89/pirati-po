@@ -43,15 +43,11 @@
     %th Úroveň
     %th Čas/ochota
     %th Poznámka
-=begin
     %th {:colspan => "2"}
-=end
   - @person.people_skills.each do |skill|
     %tr
       %td=skill.skill.name
-=begin
       %td= link_to skill.skill.name, skill.skill
-=end
       %td
         - skill.level.times do |l|
           %span.fa.fa-star
@@ -60,11 +56,14 @@
           %span.fa.fa-heart
       %td=skill.note
       %td= link_to 'Změnit', edit_people_skill_path(skill)
-=begin
-      %td= link_to 'x', skill, :method => :delete, :data => { :confirm => 'osoba '+ @person.full_name + 'nemá dovednost ' + skill.skill.name +'?' }
-      %td= link_to 'x', skill, :method => :delete, :data => { :confirm => 'osoba '+ @person.full_name + 'nemá tuto dovednost?' }
-=end
+      %td= link_to 'x', skill, :method => :delete, :data => { :confirm => 'osoba '+@person.full_name+'nemá dovednost '+skill.skill.name+'?' }
+      %td= link_to 'x', skill, :method => :delete, :data => { :confirm => 'osoba '+@person.full_name+'nemá tuto dovednost?' }
       %td= link_to 'Odstranit', skill, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      /pri spojovani retezcu operatorem  + se nesmeji delat mezery..
+      /tohle je zakomentovano
+        i tohle je zakomentovano
+        i tohle
+      /ale kdyz chci komentovat tady, musim pridat dalsi znak / a tak dale
 - if @person.not_my_skills.count>0
   = link_to 'Přidat dovednost', new_people_skill_path(:people_id => @person.id)
 = link_to 'Edit osoby', edit_person_path(@person)

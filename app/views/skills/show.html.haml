@@ -22,11 +22,8 @@
   - @skill.people_skills.each do |ps|
     %tr
       %td= link_to ps.person.full_name, ps.person
-      /%td=
-      /  - ps.level.times do |l|
-      /    %span.fa.fa-star
       %td
-        - skill.level.times do |l|
+        - ps.level.times do |l|
           %span.fa.fa-star
 
       %td=ps.favor

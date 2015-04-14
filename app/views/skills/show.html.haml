@@ -35,6 +35,7 @@
       %td=ps.person.jabber
       %td=ps.person.town
 
-%div.dal= link_to 'Upravit atributy dovednosti', edit_skill_path(@skill)
+%div.dal
+  link_to 'Upravit atributy dovednosti', edit_skill_path(@skill)
   \|
   = link_to 'Seznam dovedností', skills_path

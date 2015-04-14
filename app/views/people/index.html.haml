@@ -11,6 +11,7 @@
       %th e-mail
       %th telefon
       %th jabber
+      %th \#
       %th{:colspan => "2"}
   %tbody
     - @people.each do |person|
@@ -24,6 +25,7 @@
         %td= person.email
         %td= person.phone
         %td= person.jabber
+        %td= person.people_skills.count
         %td= link_to 'Edit', edit_person_path(person)
         %td= link_to 'x', person, method: :delete, data: { confirm: 'Opravdu smazat osobu jménem '+person.full_name+'?' }
 %br/

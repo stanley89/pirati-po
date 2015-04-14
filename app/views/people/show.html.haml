@@ -44,7 +44,9 @@
     %th Čas/ochota
     %th Poznámka
     %th 
-#    %th {:colspan => "2"}
+=begin
+    %th {:colspan => "2"}
+=end
   - @person.people_skills.each do |skill|
     %tr
       %td= link_to skill.skill.name, skill.skill
@@ -56,8 +58,10 @@
           %span.fa.fa-heart
       %td=skill.note
       %td= link_to 'Změnit', edit_people_skill_path(skill)
-#      %td= link_to 'x', skill, :method => :delete, :data => { :confirm => 'osoba '+ @person.full_name + 'nemá dovednost ' + skill.skill.name +'?' }
-#      %td= link_to 'x', skill, :method => :delete, :data => { :confirm => 'osoba '+ @person.full_name + 'nemá tuto dovednost?' }
+=begin
+      %td= link_to 'x', skill, :method => :delete, :data => { :confirm => 'osoba '+ @person.full_name + 'nemá dovednost ' + skill.skill.name +'?' }
+      %td= link_to 'x', skill, :method => :delete, :data => { :confirm => 'osoba '+ @person.full_name + 'nemá tuto dovednost?' }
+=end
       %td= link_to 'x', skill, :method => :delete, :data => { :confirm => 'osoba nemá tuto dovednost?' }
 - if @person.not_my_skills.count>0
   = link_to 'Přidat dovednost', new_people_skill_path(:people_id => @person.id)

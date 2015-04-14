@@ -43,10 +43,9 @@
     %th Úroveň
     %th Čas/ochota
     %th Poznámka
-    %th {:colspan => "2"}
+    %th{:colspan => "2"}
   - @person.people_skills.each do |skill|
     %tr
-      %td=skill.skill.name
       %td= link_to skill.skill.name, skill.skill
       %td
         - skill.level.times do |l|

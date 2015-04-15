@@ -2,7 +2,11 @@
 stránkování
 filtry
 
-a dovednost v person by se mohla proklikávat na skill
-u skil show chybějí hvězdičky ještě
 
-Hover na ikonkách, které jsou odkazem.
+
+Na skill.show chci dát otkas "přidat osobu, co má tuto dovednost"
+
+
+Hover na ikonkách, které jsou odkazem. //asi OK
+a dovednost v person by se mohla proklikávat na skill //OK
+u skil show chybějí hvězdičky ještě //OK

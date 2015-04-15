@@ -5,7 +5,7 @@ class Skill < ActiveRecord::Base
 
   def not_my_people
     my_people_ids = people.ids
-    People.where.not(id:my_people_ids)
+    Person.where.not(id:my_people_ids)
   end
 
 end

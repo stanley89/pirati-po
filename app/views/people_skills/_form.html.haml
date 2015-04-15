@@ -14,7 +14,7 @@
         = f.hidden_field :person_id
       - else
         = f.label :people_id
-        = f.collection_select(:people_id, @people_skill.skill.not_my_people, :id, :name)
+        = f.collection_select(:person_id, @people_skill.skill.not_my_people, :id, :name)
         = f.hidden_field :skill_id
   - else
     %h3= 'dovednost '+ @people_skill.skill.name

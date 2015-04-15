@@ -1,7 +1,16 @@
-%h2= @people_skill.person.full_name
+- if @people_skill.person
+  %h2= @people_skill.person.full_name
+
+- if @people_skill.skill
+  %h2= @people_skill.skill.name
+
 %p
   %strong přidat dovednost
 
 = render 'form'
 
-= link_to 'Zpět na osobu ' + @people_skill.person.full_name, @people_skill.person
+- if @people_skill.person
+  = link_to 'Zpět na osobu ' + @people_skill.person.full_name, @people_skill.person
+
+- if @people_skill.skill
+  = link_to 'Zpět na dovednost ' + @people_skill.skill.name, @people_skill.skill

@@ -41,6 +41,7 @@ gem 'haml'
 gem 'haml-rails'
 group :development do
   gem 'rspec-rails'
+  gem 'tzinfo-data'
 end
 #gem "therubyracer"
 #gem "less-rails"

@@ -38,6 +38,6 @@
 %div.dal
   = link_to 'Upravit atributy dovednosti', edit_skill_path(@skill)
   \|
-  = link_to 'Přidat dobrovolníka k dovednosti', skills_path
+  = link_to 'Přidat dobrovolníka k dovednosti', new_people_skill_path(:skill_id => @skill.id)
   \|
   = link_to 'Vytvořit novou dovednost', new_skill_path

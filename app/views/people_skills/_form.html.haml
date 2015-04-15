@@ -8,8 +8,14 @@
 
   - if @people_skill.id.nil?
     .field
-      = f.label :skill_id
-      = f.collection_select(:skill_id, @people_skill.person.not_my_skills, :id, :name)
+      - if @people_skill.skill.id.nil?
+        = f.label :skill_id
+        = f.collection_select(:skill_id, @people_skill.person.not_my_skills, :id, :name)
+        = f.hidden_field :person_id
+      - else
+        = f.label :people_id
+        = f.collection_select(:people_id, @people_skill.skill.not_my_people, :id, :name)
+        = f.hidden_field :skill_id
   - else
     %h3= 'dovednost '+ @people_skill.skill.name
   .field
@@ -21,6 +27,5 @@
   .field
     = f.label :note, "doplnění k dovednosti"
     = f.text_field :note
-  = f.hidden_field :person_id
   .actions
     = f.submit 'Uložit'

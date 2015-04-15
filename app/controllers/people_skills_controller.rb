@@ -14,7 +14,10 @@ class PeopleSkillsController < ApplicationController
 
   def new
     @people_skill = PeopleSkill.new
-    @people_skill.person = Person.find(params[:people_id])
+    - if !params[:people_id].nil?
+      @people_skill.person = Person.find(params[:people_id])
+    - if !params[:skill_id].nil?
+      @people_skill.skill = Skill.find(params[:skill_id])
     respond_with(@people_skill)
   end
 

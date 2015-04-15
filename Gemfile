@@ -41,6 +41,7 @@ gem 'haml'
 gem 'haml-rails'
 group :development do
   gem 'rspec-rails'
+  gem 'tzinfo-data'
 end
 #gem "therubyracer"
 #gem "less-rails"
@@ -51,4 +52,3 @@ gem 'omniauth'
 gem 'omniauth-openid'
 gem 'thin'
 gem 'erd'
-gem 'tzinfo-data'

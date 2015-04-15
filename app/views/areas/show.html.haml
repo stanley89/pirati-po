@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Parent:
+  = @area.parent_id
+%p
+  %b Name:
+  = @area.name
+%p
+  %b Note:
+  = @area.note
+
+= link_to 'Edit', edit_area_path(@area)
+\|
+= link_to 'Back', areas_path

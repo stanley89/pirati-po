@@ -1,33 +1,38 @@
-%h1 Seznam osob
-%table
-  %thead
-    %tr
-      %th osoba
-      %th #
-      %th nick
-      %th ulice č.
-      %th město/obec
-      %th PSČ
-      %th narození
-      %th e-mail
-      %th telefon
-      %th jabber
-      %th{:colspan => "2"}
-  %tbody
-    - @people.each do |person|
+%h1 Seznam osob - dobrovolníků
+- if @people.count==0
+  %div.nula
+    Nejsou žádné osoby odpovídající podmínkám. Můžete přidat nové.
+- else
+  %table
+    %thead
       %tr
-        %td= link_to person.full_name, person
-        %td= person.people_skills.count
-        %td= person.nick
-        %td= person.street
-        %td= person.town
-        %td= person.zip
-        %td= person.birth
-        %td= person.email
-        %td= person.phone
-        %td= person.jabber
-        %td= link_to 'Edit', edit_person_path(person)
-        %td= link_to 'x', person, method: :delete, data: { confirm: 'Opravdu smazat osobu jménem '+person.full_name+'?' }
+        %th osoba
+        %th #
+        %th nick
+        %th ulice č.
+        %th město/obec
+        %th PSČ
+        %th narození
+        %th e-mail
+        %th telefon
+        %th jabber
+        %th{:colspan => "2"}
+    %tbody
+      - @people.each do |person|
+        %tr
+          %td= link_to person.full_name, person
+          %td= person.people_skills.count
+          %td= person.nick
+          %td= person.street
+          %td= person.town
+          %td= person.zip
+          %td= person.birth
+          %td= person.email
+          %td= person.phone
+          %td= person.jabber
+          %td= link_to 'Edit', edit_person_path(person)
+          %td= link_to 'x', person, method: :delete, data: { confirm: 'Opravdu smazat osobu jménem '+person.full_name+'?' }
+
 %br/
-%div.dal
+%div.new
   = link_to 'přidat novou osobu', new_person_path

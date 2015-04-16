@@ -43,7 +43,7 @@ group :development do
   gem 'rspec-rails'
   gem 'tzinfo-data'
 end
-#gem "therubyracer"
+#gem "therubyracer", :platform=> :ruby
 #gem "less-rails"
 #gem "twitter-bootstrap-rails"
 

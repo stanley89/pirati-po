@@ -23,3 +23,7 @@ div#main_menu {width:99%; height: 18px; padding: 8px 8px 6px 8px;
 #main_menu a {padding:8px 16px; font-weight:bold;}
 #main_menu a:hover {color:#fff; background-color:#223;}
 #main_menu a:last-child {display:block; float:right; text-align:right; margin-top: -8px;}
+
+div.nula  {padding:10px 12px; background-color:#ffb; margin: 8px auto; border: 2px solid #dd7;}
+div.new a {padding:5px 12px; background-color:#7fb; margin: 5px 12px; border-radius: 5px; font-weight:bold}
+div.new a:hover {color:#7fb; background-color:#031;}

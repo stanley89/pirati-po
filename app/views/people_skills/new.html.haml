@@ -1,11 +1,12 @@
 - if @people_skill.person
   %h2= @people_skill.person.full_name
+  %p
+    %strong přidat dovednost
 
 - if @people_skill.skill
   %h2= @people_skill.skill.name
-
-%p
-  %strong přidat dovednost
+  %p
+    %strong přidat dobrovolníka
 
 = render 'form'
 

@@ -1,8 +1,11 @@
 %p#notice= notice
 
 %h2
-  %b Dovednost:
+  Dovednost:
   = @skill.name
+  %span.edit
+    = link_to 'změnit', edit_skill_path(@skill)
+
 %p
   - if @skill.ask
     %b Dotazníková
@@ -40,8 +43,7 @@
         %td=ps.person.town
 
 %div.dal
-  = link_to 'Upravit atributy dovednosti', edit_skill_path(@skill)
-  \|
   = link_to 'Přidat dobrovolníka k dovednosti', new_people_skill_path(:skill_id => @skill.id)
-  \|
+%br
+%div.new
   = link_to 'Vytvořit novou dovednost', new_skill_path

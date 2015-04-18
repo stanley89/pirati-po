@@ -3,9 +3,9 @@
   = @person.full_name
   %span.edit
     = link_to 'Edit os. údajů', edit_person_path(@person)
-%dl
-  %dt Nick:
-  %dd= @person.nick
+%p
+  %strong Nick:
+  = @person.nick
 %p
   %strong Titul:
   = @person.degree

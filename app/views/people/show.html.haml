@@ -50,6 +50,7 @@
       %th Název dovednosti
       %th Úroveň
       %th Čas/ochota
+      %th nastav
       %th Poznámka
       %th{:colspan => "2"}
     - @person.people_skills.each do |skill|
@@ -61,8 +62,9 @@
         %td
           - skill.favor.times do |f|
             %span.fa.fa-heart
-        %td=skill.note
         %td= link_to 'Změnit', edit_people_skill_path(skill)
+        %td=skill.note
+        %td
         %td= link_to 'x', skill, :method => :delete, :data => { :confirm => 'osoba '+@person.full_name+'nemá dovednost '+skill.skill.name+'?' }
       
 %br

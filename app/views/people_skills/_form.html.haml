@@ -6,9 +6,9 @@
         - @people_skill.errors.full_messages.each do |msg|
           %li= msg
 
-  - if @people_skill.skill.nil?
+  - if @people_skill.id.nil?
     .field
-      - if @people_skill.skill.id.nil?
+      - if @people_skill.skill.nil?
         = f.label :skill_id
         = f.collection_select(:skill_id, @people_skill.person.not_my_skills, :id, :name)
         = f.hidden_field :person_id

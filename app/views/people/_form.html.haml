@@ -55,5 +55,13 @@
     = f.label :jabber
     %br/
     = f.text_field :jabber
+  .field
+    = f.label :ask, "je sám mentor"
+    = f.check_box :is_mentor
+   /.field
+   /  = f.label :skill_id
+   /  = f.collection_select(:skill_id, @people_skill.person.not_my_skills, :id, :name)
+   /  = f.hidden_field :person_id
+
   .actions
     = f.submit "Uložit"

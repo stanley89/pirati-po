@@ -1,12 +1,13 @@
+stránkování + filtry
 
-stránkování
-filtry
-
-
-
-Na skill.show chci dát otkas "přidat osobu, co má tuto dovednost"
+Omezit inputy hvezdicky na 3
+měsic v češtině
 
 
-Hover na ikonkách, které jsou odkazem. //asi OK
-a dovednost v person by se mohla proklikávat na skill //OK
-u skil show chybějí hvězdičky ještě //OK
+
+
+
+
+
+
+

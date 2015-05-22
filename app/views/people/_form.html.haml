@@ -7,61 +7,69 @@
       %ul
         - @person.errors.full_messages.each do |message|
           %li= message
-  .field
-    = f.label :nick
-    %br/
-    = f.text_field :nick
-  .field
-    = f.label :degree, "titul před "
-    %br/
-    = f.text_field :degree
-  .field
-    = f.label :name, "Jméno "
-    %br/
-    = f.text_field :name
-  .field
-    = f.label :surname, "Příjmení " 
-    %br/
-    = f.text_field :surname
-  .field
-    = f.label :degree2, "titul za "
-    %br/
-    = f.text_field :degree2
-  .field
-    = f.label :street, "Ulice a číslo "
-    %br/
-    = f.text_field :street
-  .field
-    = f.label :town, "Město/obec " 
-    %br/
-    = f.text_field :town
-  .field
-    = f.label :zip, "PSČ (mezeru vložit ručně)"
-    %br/
-    = f.text_field :zip
-  .field
-    = f.label :birth, "Narození "
-    %br/
-    = f.date_select :birth, :start_year => 1920, :end_year => Time.now.year-17, :include_blank => true
-  .field
-    = f.label :email, "e-mail "
-    %br/
-    = f.text_field :email
-  .field
-    = f.label :phone, "telefon "
-    %br/
-    = f.text_field :phone
-  .field
-    = f.label :jabber
-    %br/
-    = f.text_field :jabber
-  .field
-    = f.label :ask, "je sám mentor"
-    = f.check_box :is_mentor
-    /.field
-    /  = f.label :skill_id
-    /  = f.collection_select(:skill_id, @people_skill.person.not_my_skills, :id, :name)
-    /  = f.hidden_field :person_id
+  %fieldset
+    %legend &nbsp;Identita&nbsp;
+    .field
+      = f.label :nick
+      %br/
+      = f.text_field :nick
+    .field
+      = f.label :degree, "titul před "
+      %br/
+      = f.text_field :degree
+    .field
+      = f.label :name, "Jméno "
+      %br/
+      = f.text_field :name
+    .field
+      = f.label :surname, "Příjmení "
+      %br/
+      = f.text_field :surname
+    .field
+      = f.label :degree2, "titul za "
+      %br/
+      = f.text_field :degree2
+    .field
+      = f.label :birth, "Narození "
+      %br/
+      = f.date_select :birth, :start_year => 1920, :end_year => Time.now.year-17, :include_blank => true
+  %fieldset
+    %legend &nbsp;Bydliště&nbsp;
+    .field
+      = f.label :street, "Ulice a číslo "
+      %br/
+      = f.text_field :street
+    .field
+      = f.label :town, "Město/obec "
+      %br/
+      = f.text_field :town
+    .field
+      = f.label :zip, "PSČ (mezeru vložit ručně)"
+      %br/
+      = f.text_field :zip
+  %fieldset
+    %legend &nbsp;Kontakt&nbsp;
+    .field
+      = f.label :email, "e-mail "
+      %br/
+      = f.text_field :email
+    .field
+      = f.label :phone, "telefon "
+      %br/
+      = f.text_field :phone
+    .field
+      = f.label :jabber
+      %br/
+      = f.text_field :jabber
+  %fieldset
+    %legend &nbsp;Mentorství&nbsp;
+    .field
+      = f.label :ask, "je sám mentor"
+      = f.check_box :is_mentor
+      /.field
+      /  = f.label :skill_id
+      /  = f.collection_select(:skill_id, @people_skill.person.not_my_skills, :id, :name)
+      /  = f.hidden_field :person_id
 
   .actions
     = f.submit "Uložit"

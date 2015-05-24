@@ -17,3 +17,4 @@
 /config/database.yml
 /app/views/layouts/application.html.haml
 /Gemfile
+/config/database.yml

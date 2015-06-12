@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :payments
+
+  resources :people_groups
+
+  resources :groups
+
+  resources :functions
+
   resources :areas
 
   resources :people_skills

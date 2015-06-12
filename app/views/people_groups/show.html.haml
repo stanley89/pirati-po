@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Person:
+  = @people_group.person
+%p
+  %b Group:
+  = @people_group.group
+%p
+  %b Date begin:
+  = @people_group.date_begin
+%p
+  %b Date end:
+  = @people_group.date_end
+
+= link_to 'Edit', edit_people_group_path(@people_group)
+\|
+= link_to 'Back', people_groups_path

@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Person:
+  = @payment.person
+%p
+  %b Date:
+  = @payment.date
+%p
+  %b Amount:
+  = @payment.amount
+%p
+  %b Ks:
+  = @payment.ks
+%p
+  %b Vs:
+  = @payment.vs
+%p
+  %b Ss:
+  = @payment.ss
+%p
+  %b Name:
+  = @payment.name
+%p
+  %b Message:
+  = @payment.message
+
+= link_to 'Edit', edit_payment_path(@payment)
+\|
+= link_to 'Back', payments_path

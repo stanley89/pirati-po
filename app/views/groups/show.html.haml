@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @group.name
+%p
+  %b Area:
+  = @group.area
+%p
+  %b Function:
+  = @group.function
+%p
+  %b Phpbb:
+  = @group.phpbb_id
+
+= link_to 'Edit', edit_group_path(@group)
+\|
+= link_to 'Back', groups_path

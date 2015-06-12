@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150521222055) do
+ActiveRecord::Schema.define(version: 20150612112943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,39 @@ ActiveRecord::Schema.define(version: 20150521222055) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "functions", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", force: true do |t|
+    t.string   "name"
+    t.integer  "area_id"
+    t.integer  "function_id"
+    t.integer  "phpbb_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "groups", ["area_id"], name: "index_groups_on_area_id", using: :btree
+  add_index "groups", ["function_id"], name: "index_groups_on_function_id", using: :btree
+
+  create_table "payments", force: true do |t|
+    t.integer  "person_id"
+    t.datetime "date"
+    t.decimal  "amount"
+    t.integer  "ks"
+    t.integer  "vs"
+    t.integer  "ss"
+    t.string   "name"
+    t.string   "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "payments", ["person_id"], name: "index_payments_on_person_id", using: :btree
 
   create_table "people", force: true do |t|
     t.string   "nick"
@@ -44,6 +77,18 @@ ActiveRecord::Schema.define(version: 20150521222055) do
   end
 
   add_index "people", ["mentor_id"], name: "index_people_on_mentor_id", using: :btree
+
+  create_table "people_groups", force: true do |t|
+    t.integer  "person_id"
+    t.integer  "group_id"
+    t.datetime "date_begin"
+    t.datetime "date_end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "people_groups", ["group_id"], name: "index_people_groups_on_group_id", using: :btree
+  add_index "people_groups", ["person_id"], name: "index_people_groups_on_person_id", using: :btree
 
   create_table "people_skills", force: true do |t|
     t.integer  "person_id"

@@ -1,0 +1,27 @@
+%h1 Listing people_groups
+
+%table
+  %thead
+    %tr
+      %th Person
+      %th Group
+      %th Date begin
+      %th Date end
+      %th
+      %th
+      %th
+
+  %tbody
+    - @people_groups.each do |people_group|
+      %tr
+        %td= people_group.person
+        %td= people_group.group
+        %td= people_group.date_begin
+        %td= people_group.date_end
+        %td= link_to 'Show', people_group
+        %td= link_to 'Edit', edit_people_group_path(people_group)
+        %td= link_to 'Destroy', people_group, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New People group', new_people_group_path

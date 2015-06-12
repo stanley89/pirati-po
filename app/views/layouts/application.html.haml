@@ -12,6 +12,11 @@
       %div#main_menu
         = link_to 'Lidé', people_path
         = link_to 'Dovednosti', skills_path
+        = link_to 'Oblasti', areas_path
+        = link_to 'Funkce', functions_path
+        = link_to 'Skupiny', groups_path
+        = link_to 'Platby', payments_path
+
 
         = link_to(t('logout'), users_sign_out_path, :method => :delete)
     - else

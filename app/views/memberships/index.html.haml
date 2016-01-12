@@ -1,0 +1,35 @@
+%h1 Listing memberships
+
+%table
+  %thead
+    %tr
+      %th User
+      %th Date applied
+      %th Date voted
+      %th Date paid
+      %th Date begin
+      %th Date end
+      %th Voted
+      %th Area
+      %th
+      %th
+      %th
+
+  %tbody
+    - @memberships.each do |membership|
+      %tr
+        %td= membership.user_id
+        %td= membership.date_applied
+        %td= membership.date_voted
+        %td= membership.date_paid
+        %td= membership.date_begin
+        %td= membership.date_end
+        %td= membership.voted
+        %td= membership.area_id
+        %td= link_to 'Show', membership
+        %td= link_to 'Edit', edit_membership_path(membership)
+        %td= link_to 'Destroy', membership, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Membership', new_membership_path

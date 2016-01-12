@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @membership.user_id
+%p
+  %b Date applied:
+  = @membership.date_applied
+%p
+  %b Date voted:
+  = @membership.date_voted
+%p
+  %b Date paid:
+  = @membership.date_paid
+%p
+  %b Date begin:
+  = @membership.date_begin
+%p
+  %b Date end:
+  = @membership.date_end
+%p
+  %b Voted:
+  = @membership.voted
+%p
+  %b Area:
+  = @membership.area_id
+
+= link_to 'Edit', edit_membership_path(@membership)
+\|
+= link_to 'Back', memberships_path

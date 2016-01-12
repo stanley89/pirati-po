@@ -10,11 +10,11 @@
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :area
-    = f.text_field :area
+    = f.label :area_id
+    = f.collection.select :area_id, Area.all, :id, :name
   .field
-    = f.label :function
-    = f.text_field :function
+    = f.label :function_id
+    = f.collection_select :function_id, Function.all,:id, :name
   .field
     = f.label :phpbb_id
     = f.number_field :phpbb_id

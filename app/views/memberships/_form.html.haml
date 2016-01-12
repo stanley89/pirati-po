@@ -1,0 +1,33 @@
+= form_for @membership do |f|
+  - if @membership.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@membership.errors.count, "error")} prohibited this membership from being saved:"
+      %ul
+        - @membership.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.hidden_field :person_id
+  .field
+    = f.label :date_applied
+    = f.date_select :date_applied
+  .field
+    = f.label :date_voted
+    = f.date_select :date_voted
+  .field
+    = f.label :date_paid
+    = f.date_select :date_paid
+  .field
+    = f.label :date_begin
+    = f.date_select :date_begin
+  .field
+    = f.label :date_end
+    = f.date_select :date_end
+  .field
+    = f.label :voted
+    = f.text_field :voted
+  .field
+    = f.label :area_id
+    = f.collection_select :area_id, Area.all, :id, :name
+  .actions
+    = f.submit 'Uložit'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623155954) do
+ActiveRecord::Schema.define(version: 20160112001418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,22 @@ ActiveRecord::Schema.define(version: 20150623155954) do
 
   add_index "groups", ["area_id"], name: "index_groups_on_area_id", using: :btree
   add_index "groups", ["function_id"], name: "index_groups_on_function_id", using: :btree
+
+  create_table "memberships", force: true do |t|
+    t.integer  "person_id"
+    t.date     "date_applied"
+    t.date     "date_voted"
+    t.date     "date_paid"
+    t.date     "date_begin"
+    t.date     "date_end"
+    t.string   "voted"
+    t.integer  "area_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "memberships", ["area_id"], name: "index_memberships_on_area_id", using: :btree
+  add_index "memberships", ["person_id"], name: "index_memberships_on_person_id", using: :btree
 
   create_table "payments", force: true do |t|
     t.integer  "person_id"
@@ -116,12 +132,12 @@ ActiveRecord::Schema.define(version: 20150623155954) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -130,6 +146,7 @@ ActiveRecord::Schema.define(version: 20150623155954) do
     t.datetime "updated_at"
     t.string   "openid_identifier"
     t.string   "name"
+    t.boolean  "admin",                  default: false, null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

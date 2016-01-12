@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :omniauthable, :database_authenticatable, :omniauth_providers => [:open_id]
+  devise :omniauthable, :omniauth_providers => [:open_id]
   #devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :twitter]
 
   def self.find_for_open_id(access_token, signed_in_resource=nil)
